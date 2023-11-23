@@ -1,6 +1,6 @@
 # witness-demo
 
-[![.github/workflows/main.yml](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml/badge.svg)](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml)
+[![Main](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml)
 
 ## Install witness
 
