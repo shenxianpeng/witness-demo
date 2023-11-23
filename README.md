@@ -1,5 +1,7 @@
 # witness-demo
 
+[![.github/workflows/main.yml](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml/badge.svg)](https://github.com/shenxianpeng/witness-demo/actions/workflows/main.yml)
+
 ## Install witness
 
 You need to install [witness](https://github.com/in-toto/witness) before try this demo.

@@ -23,6 +23,9 @@ jobs:
         run: bash <(curl -s https://raw.githubusercontent.com/in-toto/witness/main/install-witness.sh)
 
       - name: Create keypair
+        run: |
+          openssl genpkey -algorithm ed25519 -outform PEM -out witness-demo-key.pem
+          openssl pkey -in witness-demo-key.pem -pubout > witness-demo-pub.pem
 
       - name: Record attestation
         run: witness run --step build -o witness-demo-att.json -- python3 -m pip wheel --no-deps -w dist .
