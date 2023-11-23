@@ -82,13 +82,12 @@ jobs:
       - name: Verify binary meets policy requirements
         run: witness verify -f dist/witness_demo-1.0.0-py3-none-any.whl -a witness-demo-att.json -p policy-signed.json -k witness-demo-pub.pem
 
-  witness:
-    needs: ['build']
-    uses: actions/upload-artifact@v3
-    with:
-      name: "witness-demo"
-      path: |
-        ${{ github.workspace }}/dist/*.whl
-        witness-demo-att.json
-        policy-signed.json
-        witness-demo-pub.pem
+      - name: Saved generated artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: "witness-demo"
+          path: |
+            ${{ github.workspace }}/dist/*.whl
+            witness-demo-att.json
+            policy-signed.json
+            witness-demo-pub.pem
