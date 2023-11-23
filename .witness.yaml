@@ -1,0 +1,8 @@
+run:
+    signer-file-key-path: witness-demo-key.pem
+    trace: false
+verify:
+    attestations:
+        - "witness-demo-att.json"
+    policy: policy-signed.json
+    publickey: witness-demo-pub.pem
