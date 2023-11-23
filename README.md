@@ -43,9 +43,10 @@ Processing /home/sxp/repos/witness-demo
 Building wheels for collected packages: witness-demo
   Building wheel for witness-demo (pyproject.toml): started
   Building wheel for witness-demo (pyproject.toml): finished with status 'done'
-  Created wheel for witness-demo: filename=witness_demo-1.0.0-py3-none-any.whl size=1610 sha256=4561d6472108c331a6e103289d4c4f84f6cfbc37b7e9ac1e549daf20c8cef1c8
+  Created wheel for witness-demo: filename=witness_demo-1.0.0-py3-none-any.whl size=8323 sha256=9305d75e20fbc7380fd6776e0a17664667a747f3d55f2e30574ab5b692c66605
   Stored in directory: /home/sxp/.cache/pip/wheels/fe/5f/32/50e3d6d64ea6b8d52df092e797dab9017663331d4db3080ef5
 Successfully built witness-demo
+INFO    Starting product attestor...  
 ```
 
 ## View the attestation data in the signed DSSE Envelope
@@ -63,69 +64,37 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
   "_type": "https://in-toto.io/Statement/v0.1",
   "subject": [
     {
-      "name": "https://witness.dev/attestations/product/v0.1/file:witness_demo.egg-info/SOURCES.txt",
+      "name": "https://witness.dev/attestations/git/v0.1/commithash:07dbe54333f411c018a103dec43caf0286878b52",
       "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:0f3903d312df981e40bcd395d666624dd678bfed",
-        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "293655a12e7707c98ccb75f16a48b4c082edc9932c055b885c6674cd65fcc9d9"
+        "sha1": "07dbe54333f411c018a103dec43caf0286878b52"
       }
     },
     {
-      "name": "https://witness.dev/attestations/product/v0.1/file:witness_demo.egg-info/dependency_links.txt",
+      "name": "https://witness.dev/attestations/git/v0.1/authoremail:xianpeng.shen@gmail.com",
       "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:8b137891791fe96927ad78e64b0aad7bded08bdc",
-        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/product/v0.1/file:witness_demo.egg-info/top_level.txt",
-      "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:ba2906d0666cf726c7eaadd2cd3db615dedfdf3a",
-        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/git/v0.1/commithash:",
-      "digest": {
-        "sha1": ""
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/git/v0.1/committeremail:",
-      "digest": {
-        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/product/v0.1/file:witness_demo.egg-info/PKG-INFO",
-      "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:ec96d66beb84ac1915fc021e820b432d523b95b6",
-        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "fce3ca38c0ed1a28068b649979d0461437cf5900839004e9b67bde0cabc00f9f"
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/git/v0.1/authoremail:",
-      "digest": {
-        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      }
-    },
-    {
-      "name": "https://witness.dev/attestations/product/v0.1/file:build/lib/main.py",
-      "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:5b8dc5a0dbc7c44e96e4ec461998a312f45e7696",
-        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "97e056598e144eb6ef7dfcb7c419edfdbefc8318a1ca5cca17379608974eeb66"
+        "sha256": "07bc975c62e26e87a9a0de27292cc6a34d7d3a7e9f7d56814cebc6888a8a6b20"
       }
     },
     {
       "name": "https://witness.dev/attestations/product/v0.1/file:dist/witness_demo-1.0.0-py3-none-any.whl",
       "digest": {
-        "gitoid:sha1": "gitoid:blob:sha1:76ff9ae03ef9336117decb31af14ea2dfa46b2d9",
+        "gitoid:sha1": "gitoid:blob:sha1:1a21bbacec8810f63339936586c0effbfed2df08",
         "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-        "sha256": "4561d6472108c331a6e103289d4c4f84f6cfbc37b7e9ac1e549daf20c8cef1c8"
+        "sha256": "9305d75e20fbc7380fd6776e0a17664667a747f3d55f2e30574ab5b692c66605"
+      }
+    },
+    {
+      "name": "https://witness.dev/attestations/product/v0.1/file:witness_demo.egg-info/PKG-INFO",
+      "digest": {
+        "gitoid:sha1": "gitoid:blob:sha1:4b59bf3d3f410b39ec8a3378bde6952c7be4798c",
+        "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+        "sha256": "801da4e0e0650da4e1cf1daa06a990cbf05cc94ae1a05fd8520a599589777205"
+      }
+    },
+    {
+      "name": "https://witness.dev/attestations/git/v0.1/committeremail:xianpeng.shen@gmail.com",
+      "digest": {
+        "sha256": "07bc975c62e26e87a9a0de27292cc6a34d7d3a7e9f7d56814cebc6888a8a6b20"
       }
     }
   ],
@@ -137,7 +106,7 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
         "type": "https://witness.dev/attestations/environment/v0.1",
         "attestation": {
           "os": "linux",
-          "hostname": "PF4AY3A5",
+          "hostname": "RS-PF4AY3A5",
           "username": "sxp",
           "variables": {
             " IFS": "$_mlIFS;\n else\n unset IFS;\n fi;\n unset _mlre _mlv _mlrv _mlIFS;\n if [ -n \"${_mlshdbg:-}\" ]; then\n set -$_mlshdbg;\n fi;\n unset _mlshdbg;\n return $_mlstatus\n}",
@@ -157,6 +126,7 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "BASH_FUNC_module%%": "() {  _module_raw \"$@\" 2>&1\n}",
             "BASH_FUNC_scl%%": "() {  if [ \"$1\" = \"load\" -o \"$1\" = \"unload\" ]; then\n eval \"module $@\";\n else\n /usr/bin/scl \"$@\";\n fi\n}",
             "BASH_FUNC_switchml%%": "() {  typeset swfound=1;",
+            "BASH_FUNC_which%%": "() {  ( alias;\n eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@\n}",
             "COLORTERM": "truecolor",
             "DISPLAY": ":0",
             "GIT_ASKPASS": "/home/sxp/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/extensions/git/dist/askpass.sh",
@@ -172,7 +142,7 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "LS_COLORS": "rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
             "MAIL": "/var/spool/mail/sxp",
             "MANPATH": "/home/sxp/.nvm/versions/node/v20.6.0/share/man::",
-            "MODULEPATH": "/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles",
+            "MODULEPATH": "/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles",
             "MODULEPATH_modshare": "/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2",
             "MODULESHOME": "/usr/share/Modules",
             "MODULES_CMD": "/usr/share/Modules/libexec/modulecmd.tcl",
@@ -186,7 +156,7 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "PULSE_SERVER": "unix:/mnt/wslg/PulseServer",
             "PWD": "/home/sxp/repos/witness-demo",
             "SHELL": "/bin/bash",
-            "SHLVL": "4",
+            "SHLVL": "5",
             "TERM": "xterm-256color",
             "TERM_PROGRAM": "vscode",
             "TERM_PROGRAM_VERSION": "1.84.2",
@@ -207,38 +177,97 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "WT_SESSION": "c87acd8b-9f82-48eb-b99d-3410b013536a",
             "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/home/sxp/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/out/vs/workbench/contrib/terminal/browser/media/fish_xdg_data",
             "XDG_RUNTIME_DIR": "/mnt/wslg/runtime-dir",
+            "_": "/usr/bin/witness",
             "which_declare": "declare -f"
           }
         },
-        "starttime": "2023-11-23T17:33:50.275765903+08:00",
-        "endtime": "2023-11-23T17:33:50.275836135+08:00"
+        "starttime": "2023-11-23T17:50:09.669044203+08:00",
+        "endtime": "2023-11-23T17:50:09.669085584+08:00"
       },
       {
         "type": "https://witness.dev/attestations/git/v0.1",
         "attestation": {
-          "commithash": "",
-          "author": "",
-          "authoremail": "",
-          "committername": "",
-          "committeremail": "",
-          "commitdate": "",
-          "commitmessage": ""
+          "commithash": "07dbe54333f411c018a103dec43caf0286878b52",
+          "author": "shenxianpeng",
+          "authoremail": "xianpeng.shen@gmail.com",
+          "committername": "shenxianpeng",
+          "committeremail": "xianpeng.shen@gmail.com",
+          "commitdate": "2023-11-23 17:50:01 +0800 +0800",
+          "commitmessage": "add witness demo\n",
+          "status": {
+            "build/lib/main.py": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "dist/witness_demo-1.0.0-py3-none-any.whl": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "policy-signed.json": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "policy.json": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness-demo-att.json": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness-demo-key.pem": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness-demo-pub.pem": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness_demo.egg-info/PKG-INFO": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness_demo.egg-info/SOURCES.txt": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness_demo.egg-info/dependency_links.txt": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            },
+            "witness_demo.egg-info/top_level.txt": {
+              "staging": "untracked",
+              "worktree": "untracked"
+            }
+          },
+          "commitdigest": {
+            "sha1": "07dbe54333f411c018a103dec43caf0286878b52"
+          },
+          "treehash": "fa9848055ef4d1740290c0296bca525a4b67578a",
+          "refs": [
+            "refs/heads/main"
+          ]
         },
-        "starttime": "2023-11-23T17:33:50.275880975+08:00",
-        "endtime": "2023-11-23T17:33:50.275957049+08:00"
+        "starttime": "2023-11-23T17:50:09.669142453+08:00",
+        "endtime": "2023-11-23T17:50:09.674059993+08:00"
       },
       {
         "type": "https://witness.dev/attestations/material/v0.1",
         "attestation": {
+          ".git/COMMIT_EDITMSG": {
+            "gitoid:sha1": "gitoid:blob:sha1:400d9b8a53f578e273cf59056addcb3d95f27be1",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "a7dfd429f64b87a92d5bf7a5df7d8b8ce2aa13769fdf9f6799973f53f1729257"
+          },
           ".git/HEAD": {
             "gitoid:sha1": "gitoid:blob:sha1:b870d82622c1a9ca6bcaf5df639680424a1904b0",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
             "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80"
           },
           ".git/config": {
-            "gitoid:sha1": "gitoid:blob:sha1:c59e861ab315b8b0da04c5d075c7c5584af2a799",
+            "gitoid:sha1": "gitoid:blob:sha1:d8a49581b908d57c8bc02387c3a2e928a981d3b8",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-            "sha256": "420ce663dc162c13dc2abca166dfb3c1ef7aaa6a28d2ed1b273955a92a2e3fb1"
+            "sha256": "46237d0b71e44773f87431d9569d9bea61380a4b30ba3fa3891b0cc72e235a00"
           },
           ".git/description": {
             "gitoid:sha1": "gitoid:blob:sha1:498b267a8c7812490d6479839c5577eaaec79d62",
@@ -310,10 +339,65 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
             "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106"
           },
+          ".git/index": {
+            "gitoid:sha1": "gitoid:blob:sha1:84b9db6b139677815c8fb04fd873c84096a36b86",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "863a6348a87bc78d8a0f9c9d97a30cc82e84e0708a1f9234ba03c25d698b6119"
+          },
           ".git/info/exclude": {
             "gitoid:sha1": "gitoid:blob:sha1:a5196d1be8fb59edf8062bef36d3a602e0812139",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
             "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1"
+          },
+          ".git/logs/HEAD": {
+            "gitoid:sha1": "gitoid:blob:sha1:b0a8582495619424542b17018d8186d112a567ce",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "ccfeae46fdf76f76c1ee6bf9f15696a686ddd3f30ef3c1e9b0df57eb8ff10980"
+          },
+          ".git/logs/refs/heads/main": {
+            "gitoid:sha1": "gitoid:blob:sha1:b0a8582495619424542b17018d8186d112a567ce",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "ccfeae46fdf76f76c1ee6bf9f15696a686ddd3f30ef3c1e9b0df57eb8ff10980"
+          },
+          ".git/objects/07/dbe54333f411c018a103dec43caf0286878b52": {
+            "gitoid:sha1": "gitoid:blob:sha1:044cda6e6744ddc32694a6faa580d46640b54656",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "9232a3be319dc2665394d068ed03f5843985ee66fbf8df29db7bce8239f49340"
+          },
+          ".git/objects/5b/8dc5a0dbc7c44e96e4ec461998a312f45e7696": {
+            "gitoid:sha1": "gitoid:blob:sha1:cf57e22c435467b6663cb3d8009ce7ff0aaf3b87",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "27ce00648902555920911583ef54b2285a56d7c057ef9dddb47e8d3872937179"
+          },
+          ".git/objects/ad/bdb0e9685cc0f4482e945000e68cb4be30bc48": {
+            "gitoid:sha1": "gitoid:blob:sha1:6c40baeb7a56526f6005d9f77b9b44e72ffb6080",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "ef43ffcba5a7366e40663b402989b30713fda9e58bfdd81c8dc347d87d6bc18f"
+          },
+          ".git/objects/be/df1bb02507d3078e84e209216d329644885a7a": {
+            "gitoid:sha1": "gitoid:blob:sha1:f7b01f749b350f184b23afbbd18a65e196000d5a",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "69c32e26d273938a0ffbbf394e514d5e293bfe356a3cb81d162ca279503030ad"
+          },
+          ".git/objects/f6/940284ffc870f13e0fb3cf49cdc4a5ce28c9ff": {
+            "gitoid:sha1": "gitoid:blob:sha1:cc4eb5a88d92fa4b3b2aa5f5c30c6830c10ef5b3",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "d47af72629ebdda4f0ffba76316af2db2c3d2857efb18b5595c9fd84b65816c9"
+          },
+          ".git/objects/fa/5dddbb4355ff41046f0cbc2542d7e20f54cdc6": {
+            "gitoid:sha1": "gitoid:blob:sha1:ec0e59d798d6240f781d9e700d95d1214627643a",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "bcca36c3f7291466f1e3b767ebf8060b8ac4c431094292a6f742dbc2fe6b850b"
+          },
+          ".git/objects/fa/9848055ef4d1740290c0296bca525a4b67578a": {
+            "gitoid:sha1": "gitoid:blob:sha1:ac4e0b673954fb79de39dd79a148f2c9bf9ff50d",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "0558183d22ace420afe9bff8021e4ce732f04dc33bde8ffc8e15720c6b9b287d"
+          },
+          ".git/refs/heads/main": {
+            "gitoid:sha1": "gitoid:blob:sha1:5cbd4cf46462fe6af15562f041d37cc4920c35fd",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "c9bbed03368b912376a8f621dab3c74f5dc54b1a2fbbd0c91e3c79f22eca3aa3"
           },
           ".witness.yaml": {
             "gitoid:sha1": "gitoid:blob:sha1:adbdb0e9685cc0f4482e945000e68cb4be30bc48",
@@ -321,14 +405,34 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "sha256": "3eeeeff859035dfc0565badd08acf2af3c099518ca56ea3f211b85dabe25635a"
           },
           "README.md": {
-            "gitoid:sha1": "gitoid:blob:sha1:60929910bf95093cd21ba3497d619f689adb6f14",
+            "gitoid:sha1": "gitoid:blob:sha1:fa5dddbb4355ff41046f0cbc2542d7e20f54cdc6",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-            "sha256": "bada78eb03d04a7d4ff9548127fb3dca16415b557e67d80a90323d06566ceb7c"
+            "sha256": "d53c53d569b3d69b420461df9aab306ded3235bd08c2c7905456a70c1bb9b0e1"
+          },
+          "build/lib/main.py": {
+            "gitoid:sha1": "gitoid:blob:sha1:5b8dc5a0dbc7c44e96e4ec461998a312f45e7696",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "97e056598e144eb6ef7dfcb7c419edfdbefc8318a1ca5cca17379608974eeb66"
+          },
+          "dist/witness_demo-1.0.0-py3-none-any.whl": {
+            "gitoid:sha1": "gitoid:blob:sha1:76ff9ae03ef9336117decb31af14ea2dfa46b2d9",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "4561d6472108c331a6e103289d4c4f84f6cfbc37b7e9ac1e549daf20c8cef1c8"
           },
           "main.py": {
             "gitoid:sha1": "gitoid:blob:sha1:5b8dc5a0dbc7c44e96e4ec461998a312f45e7696",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
             "sha256": "97e056598e144eb6ef7dfcb7c419edfdbefc8318a1ca5cca17379608974eeb66"
+          },
+          "policy-signed.json": {
+            "gitoid:sha1": "gitoid:blob:sha1:cf6a66320149471d9bdf6f98b9799630d0386fff",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "f4e70a35a5701c2c470a119dcd63ec377620319b5c8fe98dc8abe4874ffca880"
+          },
+          "policy.json": {
+            "gitoid:sha1": "gitoid:blob:sha1:71b47326c49a2174957c409eed7e6277755e9a59",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "1bc9c9874fc57e054a0b68ce3846e159d7efd3f648ffd4e632823dcedae39db1"
           },
           "setup.py": {
             "gitoid:sha1": "gitoid:blob:sha1:f6940284ffc870f13e0fb3cf49cdc4a5ce28c9ff",
@@ -349,10 +453,30 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "gitoid:sha1": "gitoid:blob:sha1:2fd180080f30e64a6cee8a6ed66cc835d2a4c9c7",
             "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
             "sha256": "5b7bd1c47cacd91d649e925e3a778c28c1320172f49bca724d88dab504f8bd2d"
+          },
+          "witness_demo.egg-info/PKG-INFO": {
+            "gitoid:sha1": "gitoid:blob:sha1:ec96d66beb84ac1915fc021e820b432d523b95b6",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "fce3ca38c0ed1a28068b649979d0461437cf5900839004e9b67bde0cabc00f9f"
+          },
+          "witness_demo.egg-info/SOURCES.txt": {
+            "gitoid:sha1": "gitoid:blob:sha1:0f3903d312df981e40bcd395d666624dd678bfed",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "293655a12e7707c98ccb75f16a48b4c082edc9932c055b885c6674cd65fcc9d9"
+          },
+          "witness_demo.egg-info/dependency_links.txt": {
+            "gitoid:sha1": "gitoid:blob:sha1:8b137891791fe96927ad78e64b0aad7bded08bdc",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+          },
+          "witness_demo.egg-info/top_level.txt": {
+            "gitoid:sha1": "gitoid:blob:sha1:ba2906d0666cf726c7eaadd2cd3db615dedfdf3a",
+            "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
+            "sha256": "6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
           }
         },
-        "starttime": "2023-11-23T17:33:50.275982932+08:00",
-        "endtime": "2023-11-23T17:33:50.280586581+08:00"
+        "starttime": "2023-11-23T17:50:09.674378373+08:00",
+        "endtime": "2023-11-23T17:50:09.684713638+08:00"
       },
       {
         "type": "https://witness.dev/attestations/command-run/v0.1",
@@ -367,66 +491,34 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
             "dist",
             "."
           ],
-          "stdout": "Processing /home/sxp/repos/witness-demo\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: witness-demo\n  Building wheel for witness-demo (pyproject.toml): started\n  Building wheel for witness-demo (pyproject.toml): finished with status 'done'\n  Created wheel for witness-demo: filename=witness_demo-1.0.0-py3-none-any.whl size=1610 sha256=4561d6472108c331a6e103289d4c4f84f6cfbc37b7e9ac1e549daf20c8cef1c8\n  Stored in directory: /home/sxp/.cache/pip/wheels/fe/5f/32/50e3d6d64ea6b8d52df092e797dab9017663331d4db3080ef5\nSuccessfully built witness-demo\n",
+          "stdout": "Processing /home/sxp/repos/witness-demo\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: witness-demo\n  Building wheel for witness-demo (pyproject.toml): started\n  Building wheel for witness-demo (pyproject.toml): finished with status 'done'\n  Created wheel for witness-demo: filename=witness_demo-1.0.0-py3-none-any.whl size=8323 sha256=9305d75e20fbc7380fd6776e0a17664667a747f3d55f2e30574ab5b692c66605\n  Stored in directory: /home/sxp/.cache/pip/wheels/fe/5f/32/50e3d6d64ea6b8d52df092e797dab9017663331d4db3080ef5\nSuccessfully built witness-demo\n",
           "exitcode": 0
         },
-        "starttime": "2023-11-23T17:33:50.280988377+08:00",
-        "endtime": "2023-11-23T17:33:54.738961303+08:00"
+        "starttime": "2023-11-23T17:50:09.685149882+08:00",
+        "endtime": "2023-11-23T17:50:12.025981126+08:00"
       },
       {
         "type": "https://witness.dev/attestations/product/v0.1",
         "attestation": {
-          "build/lib/main.py": {
-            "mime_type": "text/x-python; charset=utf-8",
-            "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:5b8dc5a0dbc7c44e96e4ec461998a312f45e7696",
-              "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "97e056598e144eb6ef7dfcb7c419edfdbefc8318a1ca5cca17379608974eeb66"
-            }
-          },
           "dist/witness_demo-1.0.0-py3-none-any.whl": {
             "mime_type": "application/zip",
             "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:76ff9ae03ef9336117decb31af14ea2dfa46b2d9",
+              "gitoid:sha1": "gitoid:blob:sha1:1a21bbacec8810f63339936586c0effbfed2df08",
               "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "4561d6472108c331a6e103289d4c4f84f6cfbc37b7e9ac1e549daf20c8cef1c8"
+              "sha256": "9305d75e20fbc7380fd6776e0a17664667a747f3d55f2e30574ab5b692c66605"
             }
           },
           "witness_demo.egg-info/PKG-INFO": {
             "mime_type": "text/plain; charset=utf-8",
             "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:ec96d66beb84ac1915fc021e820b432d523b95b6",
+              "gitoid:sha1": "gitoid:blob:sha1:4b59bf3d3f410b39ec8a3378bde6952c7be4798c",
               "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "fce3ca38c0ed1a28068b649979d0461437cf5900839004e9b67bde0cabc00f9f"
-            }
-          },
-          "witness_demo.egg-info/SOURCES.txt": {
-            "mime_type": "text/plain; charset=utf-8",
-            "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:0f3903d312df981e40bcd395d666624dd678bfed",
-              "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "293655a12e7707c98ccb75f16a48b4c082edc9932c055b885c6674cd65fcc9d9"
-            }
-          },
-          "witness_demo.egg-info/dependency_links.txt": {
-            "mime_type": "text/plain; charset=utf-8",
-            "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:8b137891791fe96927ad78e64b0aad7bded08bdc",
-              "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
-            }
-          },
-          "witness_demo.egg-info/top_level.txt": {
-            "mime_type": "text/plain; charset=utf-8",
-            "digest": {
-              "gitoid:sha1": "gitoid:blob:sha1:ba2906d0666cf726c7eaadd2cd3db615dedfdf3a",
-              "gitoid:sha256": "gitoid:blob:sha256:473a0f4c3be8a93681a267e3b1e9a7dcda1185436fe141f7749120a303721813",
-              "sha256": "6403203dd5a0867eb14d104ee8a73730bd72dd9ad92e78d996a6dba0a5dcfc01"
+              "sha256": "801da4e0e0650da4e1cf1daa06a990cbf05cc94ae1a05fd8520a599589777205"
             }
           }
         },
-        "starttime": "2023-11-23T17:33:54.7390385+08:00",
-        "endtime": "2023-11-23T17:33:54.747139335+08:00"
+        "starttime": "2023-11-23T17:50:12.026121908+08:00",
+        "endtime": "2023-11-23T17:50:12.029422123+08:00"
       }
     ]
   }
