@@ -1,8 +1,10 @@
 # witness-demo
 
+## Install witness
+
 You need to install [witness](https://github.com/in-toto/witness) before try this demo.
 
-## Create a Keypair
+## Create keypair
 
 ```
 openssl genpkey -algorithm ed25519 -outform PEM -out witness-demo-key.pem
@@ -526,7 +528,7 @@ cat witness-demo-att.json | jq -r .payload | base64 -d | jq
 ```
 </details>
 
-## Create a Policy File
+## Create Policy File
 
 See ![](policy.json)
 

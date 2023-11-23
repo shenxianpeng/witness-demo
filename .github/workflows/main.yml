@@ -1,0 +1,91 @@
+name: Main
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install witness
+        run: bash <(curl -s https://raw.githubusercontent.com/in-toto/witness/main/install-witness.sh)
+
+      - name: Create keypair
+
+      - name: Record attestation
+        run: witness run --step build -o witness-demo-att.json -- python3 -m pip wheel --no-deps -w dist .
+
+      - name: View attestation data
+        run: cat witness-demo-att.json | jq -r .payload | base64 -d | jq
+
+      - name: Create policy file
+        run: |
+          cat <<EOL > policy.json
+            {
+              "expires": "2025-12-17T23:57:40-05:00",
+              "steps": {
+                "build": {
+                  "name": "build",
+                  "attestations": [
+                    {
+                      "type": "https://witness.dev/attestations/material/v0.1",
+                      "regopolicies": []
+                    },
+                    {
+                      "type": "https://witness.dev/attestations/command-run/v0.1",
+                      "regopolicies": []
+                    },
+                    {
+                      "type": "https://witness.dev/attestations/product/v0.1",
+                      "regopolicies": []
+                    }
+                  ],
+                  "functionaries": [
+                    {
+                      "publickeyid": "{{PUBLIC_KEY_ID}}"
+                    }
+                  ]
+                }
+              },
+              "publickeys": {
+                "{{PUBLIC_KEY_ID}}": {
+                  "keyid": "{{PUBLIC_KEY_ID}}",
+                  "key": "{{B64_PUBLIC_KEY}}"
+                }
+              }
+            }
+          EOL
+      
+      - name: Replace variables in policy.json
+        run: |
+          id=`sha256sum witness-demo-pub.pem | awk '{print $1}'` && sed -i "s/{{PUBLIC_KEY_ID}}/$id/g" policy.json
+          pubb64=`cat witness-demo-pub.pem | base64 -w 0` && sed -i "s/{{B64_PUBLIC_KEY}}/$pubb64/g" policy.json
+
+      - name: Sing policy file
+        run: witness sign -f policy.json --signer-file-key-path witness-demo-key.pem --outfile policy-signed.json
+
+      - name: Verify binary meets policy requirements
+        run: witness verify -f dist/witness_demo-1.0.0-py3-none-any.whl -a witness-demo-att.json -p policy-signed.json -k witness-demo-pub.pem
+
+  witness:
+    needs: ['build']
+    uses: actions/upload-artifact@v3
+    with:
+      name: "witness-demo"
+      path: |
+        ${{ github.workspace }}/dist/*.whl
+        witness-demo-att.json
+        policy-signed.json
+        witness-demo-pub.pem
